@@ -1,0 +1,5 @@
+require "nvim_config"
+require "vimwiki_conf"
+require "reports"
+require "telekasten_conf"
+require "pandoc_conf"
