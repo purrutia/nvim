@@ -1,49 +1,20 @@
 local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BBOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  print "Installing packer close and reopen Neovim..."
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
+return require('packer').startup(function(use)
+  -- My plugins here
+  -- use 'foo1/bar1.nvim'
+  -- use 'foo2/bar2.nvim'
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
-
--- Have packer use a popup window
-packer.init {
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "rounded"}
-    end,
-  },
-}
-
--- Install you plugins here
-return packer.startup(function(use)
-  -- Plugins here
+-------------------------------------------------
 
   -- Common
   use "wbthomason/packer.nvim"        -- Have packer manage itself
+
   -- PANDOC
   use "vim-pandoc/vim-pandoc"
   use "vim-pandoc/vim-pandoc-syntax"
@@ -55,6 +26,7 @@ return packer.startup(function(use)
   use "gruvbox-community/gruvbox"
   use 'folke/tokyonight.nvim'
   use "lunarvim/darkplus.nvim"
+  use "sainnhe/everforest"
 
   -- Distraction free
   use "junegunn/goyo.vim"
@@ -72,17 +44,18 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- command line completions
-  use "saadparwaiz1/cmp_luasnip" -- snippets completions
   use "hrsh7th/cmp-nvim-lsp" -- LSP completions
-  use "hrsh7th/cmp-nvim-lua" -- LUA completions
+  use "onsails/lspkind.nvim" -- vscode-like pictograms for neovim lsp completion items
 
   -- snippets
   use "L3MON4D3/LuaSnip" -- snippet engine
+  use "saadparwaiz1/cmp_luasnip" -- snippets completions
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple language server installer
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
 
   -- Treesitter
   use {
@@ -90,14 +63,20 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
 
-  -- Telekasten for Zettelkasten
-  use "renerocksai/telekasten.nvim"
+  -- Calendar 
   use "renerocksai/calendar-vim"
 
-  -- Automatically set your configurationafter cloning packer.nvim
+  -- Comment
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
+  -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
+  if packer_bootstrap then
+    require('packer').sync()
   end
 end)
-

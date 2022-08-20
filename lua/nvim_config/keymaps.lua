@@ -1,15 +1,7 @@
 -- keymaps.lua
 -- mappings defined on lua
 
-local options = { noremap = true, silent = true }
-
--- local term_options = { silent = true }
-
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
-
 -- Remap space as leader key
-keymap("", "<Space>", "<Nop>", options)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -24,82 +16,81 @@ vim.g.maplocalleader = " "
 
 -- Normal Mode --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", options)
-keymap("n", "<C-j>", "<C-w>j", options)
-keymap("n", "<C-k>", "<C-w>k", options)
-keymap("n", "<C-l>", "<C-w>l", options)
+vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true})
+vim.keymap.set("n", "<C-j>", "<C-w>j", { silent = true})
+vim.keymap.set("n", "<C-k>", "<C-w>k", { silent = true})
+vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true})
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", options)
-keymap("n", "<C-Down>", ":resize +2<CR>", options)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", options)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", options)
+vim.keymap.set("n", "<C-Up>", "<cmd>resize -2<CR>", { silent = true})
+vim.keymap.set("n", "<C-Down>", "<cmd>resize +2<CR>", { silent = true})
+vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { silent = true})
+vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { silent = true})
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", options)
-keymap("n", "<S-h>", ":bprevious<CR>", options)
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { silent = true})
+vim.keymap.set("n", "<S-h>", "<cmd>bprevious<CR>", { silent = true})
 
 -- Move text up and down
-keymap("n", "<A-j>", "<ESC>:m .+1<CR>==", options)
-keymap("n", "<A-k>", "<ESC>:m .-2<CR>==", options)
+vim.keymap.set("n", "<A-j>", "<cmd>m .+1<CR>==", { silent = true})
+vim.keymap.set("n", "<A-k>", "<cmd>m .-2<CR>==", { silent = true})
 
 -- NO ARROWS
-keymap("n", "<Left>", ":echoe 'Use h'<CR>", options)
-keymap("n", "<Right>", ":echoe 'Use l'<CR>", options)
-keymap("n", "<Up>", ":echoe 'Use k'<CR>", options)
-keymap("n", "<Down>", ":echoe 'Use j'<CR>", options)
+vim.keymap.set("n", "<Left>", "<cmd>echoe 'Use h'<CR>", { silent = true})
+vim.keymap.set("n", "<Right>", "<cmd>echoe 'Use l'<CR>", { silent = true})
+vim.keymap.set("n", "<Up>", "<cmd>echoe 'Use k'<CR>", { silent = true})
+vim.keymap.set("n", "<Down>", "<cmd>echoe 'Use j'<CR>", { silent = true})
 
 -- Quick Save
-keymap("n", "<leader>w", ":w<CR>", options)
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { silent = true})
 
 -- Q in normal mode enters on Ex mode. You almost never want this
-keymap("n", "Q", "<Nop>", options)
+vim.keymap.set("n", "Q", "<Nop>", { silent = true})
 
 -- Quicker buffer close
-keymap("n", "<leader>q", ":bd<CR>", options)
+vim.keymap.set("n", "<leader>q", "<cmd>bd<CR>", { silent = true})
 
 -- Copy and paste to the clipboard. BEST MAPPINGS EVER!!!
-keymap("n", "<leader>y", '"+y', options)
-keymap("n", "<leader>p", '"+p', options)
+vim.keymap.set("n", "<leader>y", '"+y', { silent = true})
+vim.keymap.set("n", "<leader>p", '"+p', { silent = true})
 
 -- Yank to the end of the line
-keymap("n", "Y", 'y$', options)
-
--- Edit Config file
---keymap("n", "<leader>ie", ":edit $MYVIMRC<CR>", options)
---keymap("n", "<leader>is", ":source $MYVIMRC<CR>", options)
+vim.keymap.set("n", "Y", 'y$', { silent = true})
 
 -- Fix increasing number since <C-a> is taken by tmux
-keymap("n", "<leader>a", "<C-a>", options)
+vim.keymap.set("n", "<leader>a", "<C-a>", { silent = true})
 
 -- Change word to uppercase
-keymap("n", "<A-m>", "gUiw", options)
+vim.keymap.set("n", "<A-m>", "gUiw", { silent = true})
 
 -- Change CWR to root file directory
-keymap("n", "<leader>cd", ":lcd %:p:h<CR>", options)
+vim.keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<CR><cmd>pwd<CR>", { silent = true})
+
+-- Recover Ctrl - v
+vim.keymap.set("n", "<A-v>", "<C-v>", { silent = true })
 
 -- Insert Mode
 -- NO ARROWS
-keymap("i", "<Left>", "<ESC>:echoe 'Use h'<CR>a", options)
-keymap("i", "<Right>", "<ESC>:echoe 'Use l'<CR>a", options)
-keymap("i", "<Up>", "<ESC>:echoe 'Use k'<CR>a", options)
-keymap("i", "<Down>", "<ESC>:echoe 'Use j'<CR>a", options)
+vim.keymap.set("i", "<Left>", "<cmd>echoe 'Use h'<CR>a", { silent = true})
+vim.keymap.set("i", "<Right>", "<cmd>echoe 'Use l'<CR>a", { silent = true})
+vim.keymap.set("i", "<Up>", "<cmd>echoe 'Use k'<CR>a", { silent = true})
+vim.keymap.set("i", "<Down>", "<cmd>echoe 'Use j'<CR>a", { silent = true})
 
 -- Change word to uppercase
-keymap("i", "<A-m>", "<ESC>gUiwea", options)
+vim.keymap.set("i", "<A-m>", "<ESC>gUiwea", { silent = true})
 
 -- Visual Mode
 -- Stay in indent mode
-keymap("v", "<", "<gv", options)
-keymap("v", ">", ">gv", options)
+vim.keymap.set("v", "<", "<gv", { silent = true})
+vim.keymap.set("v", ">", ">gv", { silent = true})
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", options)
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", options)
+vim.keymap.set("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", { silent = true})
+vim.keymap.set("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { silent = true})
 
 -- Copy and paste to the clipboard. BEST MAPPINGS EVER!!!
-keymap("v", "<leader>y", '"+y', options)
+vim.keymap.set("v", "<leader>y", '"+y', { silent = true})
 
 -- Terminal Mode
 -- Change to normal mode in terminal
-keymap("t", "<ESC><ESC>", "<C-\\><C-n>", options)
+vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>", { silent = true})
