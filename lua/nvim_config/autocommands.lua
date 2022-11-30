@@ -11,3 +11,12 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set( { "n", "v" }, "q", "<cmd>close<CR>", { silent = true, buffer = true })
   end,
 })
+
+-- set wrap for markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("wrapMDs", { clear = true }),
+  pattern = "*.md",
+  callback = function()
+    vim.opt.wrap = true
+  end,
+})

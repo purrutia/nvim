@@ -78,6 +78,8 @@ vim.keymap.set("i", "<Down>", "<cmd>echoe 'Use j'<CR>a", { silent = true})
 
 -- Change word to uppercase
 vim.keymap.set("i", "<A-m>", "<ESC>gUiwea", { silent = true})
+vim.keymap.set("i", "<A-v>", "<C-v>", { silent = true})
+
 
 -- Visual Mode
 -- Stay in indent mode
