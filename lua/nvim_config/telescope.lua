@@ -75,7 +75,7 @@ local M = {}
 M.search_configfiles = function()
   require("telescope.builtin").find_files({
     prompt_title = "< VimRC >",
-    cwd = "~/repos/github.com/purrutia/nvim-config/",
+    cwd = "~/repos/nvim-config/",
   })
 end
 
