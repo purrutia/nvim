@@ -58,3 +58,6 @@ require("lspconfig")["sumneko_lua"].setup{
 
 -- GOPLS language server
 require'lspconfig'.gopls.setup{}
+
+-- PyRight
+require'lspconfig'.pyright.setup{}
