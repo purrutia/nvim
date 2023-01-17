@@ -61,3 +61,6 @@ require'lspconfig'.gopls.setup{}
 
 -- PyRight
 require'lspconfig'.pyright.setup{}
+
+-- BASH Language server
+require'lspconfig'.bashls.setup{}
