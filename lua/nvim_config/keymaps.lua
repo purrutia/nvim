@@ -69,6 +69,10 @@ vim.keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<CR><cmd>pwd<CR>", { silent = t
 -- Recover Ctrl - v
 vim.keymap.set("n", "<A-v>", "<C-v>", { silent = true })
 
+-- Netrw
+vim.keymap.set("n", "<leader>ls",vim.cmd.Ex, { silent = true})
+
+
 -- Insert Mode
 -- NO ARROWS
 vim.keymap.set("i", "<Left>", "<cmd>echoe 'Use h'<CR>a", { silent = true})
