@@ -77,6 +77,16 @@ return require('packer').startup(function(use)
   -- TMUX / VIM Navigator
   use "christoomey/vim-tmux-navigator"
 
+  -- Undotree
+  use {
+    "jiaoshijie/undotree",
+    config = function()
+      require('undotree').setup()
+    end,
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
