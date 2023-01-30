@@ -12,7 +12,7 @@ telescope.setup{
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
-    layout_strategy = 'vertical',
+    layout_strategy = 'horizontal',
     mappings = {
       -- Insert Mode
       i = {
@@ -74,7 +74,7 @@ keymap("n", "<leader>fp", "<cmd>lua require('nvim_config.telescope').search_proj
 local M = {}
 M.search_configfiles = function()
   require("telescope.builtin").find_files({
-    prompt_title = "< VimRC >",
+    prompt_title = "< Neovim Configs >",
     cwd = "~/repos/nvim-config/",
   })
 end
