@@ -70,8 +70,11 @@ vim.keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<CR><cmd>pwd<CR>", { silent = t
 vim.keymap.set("n", "<A-v>", "<C-v>", { silent = true })
 
 -- Netrw
-vim.keymap.set("n", "<leader>ls",vim.cmd.Ex, { silent = true})
+vim.keymap.set("n", "<leader>ls",vim.cmd.Ex, { silent = true, desc = "Open Netrw"})
 
+-- Search and center
+vim.keymap.set("n", "n", "nzzzv", { silent = true, desc = "Search Next and Center"})
+vim.keymap.set("n", "N", "Nzzzv", { silent = true, desc = "Search Previous and Center"})
 
 -- Insert Mode
 -- NO ARROWS
