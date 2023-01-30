@@ -64,3 +64,6 @@ require'lspconfig'.pyright.setup{}
 
 -- BASH Language server
 require'lspconfig'.bashls.setup{}
+
+-- RUBY Solargraph Language server
+require'lspconfig'.solargraph.setup{}
