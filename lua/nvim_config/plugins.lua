@@ -66,6 +66,10 @@ return require('packer').startup(function(use)
   -- Calendar 
   use "renerocksai/calendar-vim"
 
+  -- Surround
+    use "tpope/vim-surround"
+    use "tpope/vim-repeat"
+
   -- Comment
   use {
     'numToStr/Comment.nvim',

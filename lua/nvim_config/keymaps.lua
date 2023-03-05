@@ -1,10 +1,6 @@
 -- keymaps.lua
 -- mappings defined on lua
 
--- Remap space as leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- Modes:
 --
 --  normal_mode = "n"
@@ -14,6 +10,8 @@ vim.g.maplocalleader = " "
 --  terminal_mode = "t"
 --  command_mode = "c"
 
+-- Disable <Space> and  in visual and normal Mode
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Normal Mode --
 -- Better window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true})
@@ -30,6 +28,10 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { silent = true}
 -- Navigate buffers
 vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { silent = true})
 vim.keymap.set("n", "<S-h>", "<cmd>bprevious<CR>", { silent = true})
+
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Move text up and down
 vim.keymap.set("n", "<A-j>", "<cmd>m .+1<CR>==", { silent = true})
@@ -62,6 +64,9 @@ vim.keymap.set("n", "<leader>a", "<C-a>", { silent = true})
 
 -- Change word to uppercase
 vim.keymap.set("n", "<A-m>", "gUiw", { silent = true})
+
+-- Change line to Titlecase
+vim.keymap.set("n", "<leader>tc", "<cmd>s/\\v<(.)(\\k*)/\\u\\1\\L\\2/g<CR>", { silent = true})
 
 -- Change CWR to root file directory
 vim.keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<CR><cmd>pwd<CR>", { silent = true})
@@ -103,3 +108,9 @@ vim.keymap.set("v", "<leader>y", '"+y', { silent = true})
 -- Terminal Mode
 -- Change to normal mode in terminal
 vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>", { silent = true})
+
+-- [[ Diagnostic Keymaps ]]
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)

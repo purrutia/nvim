@@ -7,4 +7,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.formatoptions:remove({ 'c', 'r', 'o' })       -- avoid adding comments on newline when you are on a commented line. Use Comments.nvim instead 'gco' or 'gcO'
   end
 })
-
