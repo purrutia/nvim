@@ -59,9 +59,6 @@ vim.keymap.set("n", "<leader>p", '"+p', { silent = true})
 -- Yank to the end of the line
 vim.keymap.set("n", "Y", 'y$', { silent = true})
 
--- Fix increasing number since <C-a> is taken by tmux
-vim.keymap.set("n", "<leader>a", "<C-a>", { silent = true})
-
 -- Change word to uppercase
 vim.keymap.set("n", "<A-m>", "gUiw", { silent = true})
 
