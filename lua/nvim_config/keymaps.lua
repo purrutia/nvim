@@ -10,8 +10,6 @@
 --  terminal_mode = "t"
 --  command_mode = "c"
 
--- Disable <Space> and  in visual and normal Mode
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Normal Mode --
 -- Better window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true})
