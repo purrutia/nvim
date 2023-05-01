@@ -81,6 +81,12 @@ vim.keymap.set("n", "<leader>ls",vim.cmd.Ex, { silent = true, desc = "Open Netrw
 vim.keymap.set("n", "n", "nzzzv", { silent = true, desc = "Search Next and Center"})
 vim.keymap.set("n", "N", "Nzzzv", { silent = true, desc = "Search Previous and Center"})
 
+-- source current file
+vim.keymap.set("n", "<leader>s", "<cmd>source %<CR>", { desc = "Source current file" })
+
+-- source luasnip file
+vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>", { desc = "Source luasnip.lua file" })
+
 -- Insert Mode
 -- NO ARROWS
 vim.keymap.set("i", "<Left>", "<cmd>echoe 'Use h'<CR>a", { silent = true})
