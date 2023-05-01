@@ -79,6 +79,7 @@ return require('packer').startup(function(use)
   }
 
   -- TMUX / VIM Navigator
+  -- TODO: fix it
   use "christoomey/vim-tmux-navigator"
 
   -- Undotree

@@ -14,7 +14,23 @@ vim.g.vimwiki_list = {
     ext = '.md',
   }
 }
+-- clipboard on WSL
+-- TODO: move it to separated file
+local in_wsl = os.getenv('WSL_DISTRO_NAME') ~= nil
+
+if in_wsl then
+  vim.g.clipboard = {
+    name = 'wsl clipboard',
+    copy = { ["+"] = { "clip.exe" },["*"] = { "clip.exe" } },
+    paste = { ["+"] = { "neovim_paste" },
+              ["*"] = { "neovim_paste" } },
+    cache_enabled = 0,
+  }
+end
+
+-- CONFIGS
 require "nvim_config"
 -- require "vimwiki_conf"
 -- require "reports"
 -- require "pandoc_conf"
+
