@@ -11,12 +11,7 @@
 --  command_mode = "c"
 
 -- Normal Mode --
--- Better window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true})
-vim.keymap.set("n", "<C-j>", "<C-w>j", { silent = true})
-vim.keymap.set("n", "<C-k>", "<C-w>k", { silent = true})
-vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true})
-
+-- Navigation with plugin for TMUX (nvim-tmux-navigation)
 -- Resize with arrows
 vim.keymap.set("n", "<C-Up>", "<cmd>resize -2<CR>", { silent = true})
 vim.keymap.set("n", "<C-Down>", "<cmd>resize +2<CR>", { silent = true})
