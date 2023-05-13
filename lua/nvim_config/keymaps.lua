@@ -79,6 +79,9 @@ vim.keymap.set("n", "N", "Nzzzv", { silent = true, desc = "Search Previous and C
 -- source current file
 vim.keymap.set("n", "<leader>s", "<cmd>source %<CR>", { desc = "Source current file" })
 
+-- Make file executable
+vim.keymap.set("n", "<leader>", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make current file executable" })
+
 -- source luasnip file
 vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>", { desc = "Source luasnip.lua file" })
 
