@@ -10,6 +10,9 @@
 --  terminal_mode = "t"
 --  command_mode = "c"
 
+-- Disable <Space> in visual and normal Mode
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
 -- Normal Mode --
 -- Navigation with plugin for TMUX (nvim-tmux-navigation)
 -- Resize with arrows

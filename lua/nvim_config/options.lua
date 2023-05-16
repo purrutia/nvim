@@ -60,6 +60,8 @@ vim.o.smartindent = true
 
 vim.o.conceallevel = 0
 
+-- scrolloff
+vim.o.scrolloff = 8
 --------------------------------------------------------------------------------
 -- File with all the basic options of the nvim editor:
 
