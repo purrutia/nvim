@@ -26,7 +26,7 @@ vim.o.breakindent = true
 -- Save undo history
 vim.o.undofile = true
 -- Location of undofiles
-vim.o.undodir = "/home/purrutia/.local/nvim/undodir"
+vim.o.undodir = "~/.local/nvim/undodir"
 
 -- Case insensitive searching unless /C or capital in search
 vim.o.ignorecase = true
@@ -36,7 +36,7 @@ vim.o.smartcase = true
 vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
-vim.o.updatetme = 300
+vim.o.updatetime = 300
 vim.o.timeout = true
 vim.o.timeoutlen = 400
 
