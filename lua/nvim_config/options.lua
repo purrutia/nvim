@@ -26,7 +26,8 @@ vim.o.breakindent = true
 -- Save undo history
 vim.o.undofile = true
 -- Location of undofiles
-vim.o.undodir = '$HOME/.local/nvim/undodir'
+local homedir = os.getenv("HOME")
+vim.o.undodir = homedir .. '/.local/nvim/undodir'
 
 -- Case insensitive searching unless /C or capital in search
 vim.o.ignorecase = true
