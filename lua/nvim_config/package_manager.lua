@@ -186,4 +186,4 @@ require('lazy').setup({
   -- NOTE: The import below automatically adds your own plugins, configurations, etc from 'lua/custom/plugins/*.lua'
   -- For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   -- { import = 'custom.plugins' },
-}, {})
+}, {lazylock=vim.fn.stdpath 'data' .. '/lazy-lock.json'})
