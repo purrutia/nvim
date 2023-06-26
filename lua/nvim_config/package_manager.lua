@@ -180,6 +180,9 @@ require('lazy').setup({
     end
   },
 
+  -- Pandoc and markdown
+  'vim-pandoc/vim-pandoc',
+  'rwxrob/vim-pandoc-syntax-simple',
 
   -- NOTE: Next Step on your Neovim journey: Add/Configure additional plugins
 
