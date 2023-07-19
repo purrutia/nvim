@@ -70,13 +70,37 @@ require('lazy').setup({
     },
   },
 
+  -- [[ Colorschemes ]]
+  'gruvbox-community/gruvbox',
+  {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function ()
+      -- vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'tokyonight-storm'
+      -- vim.cmd.colorscheme 'tokyonight-day'
+      vim.cmd.colorscheme 'tokyonight-moon'
+    end,
+  },
+  'sainnhe/everforest',
+
   { -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     priority = 1000,
-    config = function ()
-      vim.cmd.colorscheme 'onedark'
-    end,
+    -- config = function ()
+    --   vim.cmd.colorscheme 'onedark'
+    -- end,
   },
+
+  { -- Rose Pine Theme
+    'rose-pine/neovim', as = 'rose-pine',
+    -- config = function ()
+    --   vim.cmd.colorscheme 'rose-pine-moon'
+    -- end,
+  },
+
 
   { -- set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -84,7 +108,9 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        -- theme = 'onedark',
+        -- theme = 'rose-pine',
+        theme = 'tokyonight',
         component_separators = '|',
         section_separators = '',
       },
@@ -150,11 +176,6 @@ require('lazy').setup({
     --   }
     -- end
   },
-
-  -- [[ Colorschemes ]]
-  'gruvbox-community/gruvbox',
-  'folke/tokyonight.nvim',
-  'sainnhe/everforest',
 
   -- [[ Distraction Free ]]
   'junegunn/goyo.vim',
