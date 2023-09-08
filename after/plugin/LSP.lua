@@ -54,6 +54,7 @@ local servers = {
   pyright = {},
   bashls = {},
   marksman = {},
+  tsserver = {},
   -- rust_analyzer = {},
   -- tsserver = {},
 
