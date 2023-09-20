@@ -50,7 +50,13 @@ end
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   -- clangd = {},
-  gopls = {},
+  gopls = {
+    settings = {
+      gopls = {
+        completeUnimported = true,
+      },
+    },
+  },
   pyright = {},
   bashls = {},
   marksman = {},
