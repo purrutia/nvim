@@ -180,6 +180,16 @@ require('lazy').setup({
   -- [[ Distraction Free ]]
   'junegunn/goyo.vim',
 
+  -- Lua
+  {
+    "folke/zen-mode.nvim",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+
   -- [[ Easy align ]]
   'junegunn/vim-easy-align',
 
