@@ -119,3 +119,4 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- [[ Diary Titles ]]
 vim.keymap.set('n', '<leader>tf', "<cmd>.!todayfig<CR>", { desc = "Today's Title" })
+vim.keymap.set('n', '<leader>yf', "<cmd>.!yesterdayfig<CR>", { desc = "Yesterday's Title" })
