@@ -81,7 +81,7 @@ vim.keymap.set("n", "<leader>s", "<cmd>source %<CR>", { desc = "Source current f
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make current file executable" })
 
 -- source luasnip file
-vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>", { desc = "Source luasnip.lua file" })
+-- vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>", { desc = "Source luasnip.lua file" })
 
 -- Insert Mode
 -- NO ARROWS
