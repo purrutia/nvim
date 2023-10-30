@@ -1,2 +1,1 @@
--- plugins
-require("purrutia.plugins.lazy")
+-- plugins put the plugins without config needed here
