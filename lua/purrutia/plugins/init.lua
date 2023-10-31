@@ -2,12 +2,6 @@
 return {
   -- NOTE: First some plugins that don't require any configuration
 
-  -- [[ Git Related plugins ]]
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   -- The configuration is done below. Search for lspconfig to find it below.
@@ -48,36 +42,6 @@ return {
     },
   },
 
-  -- [[ Colorschemes ]]
-  'gruvbox-community/gruvbox',
-  {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function ()
-      -- vim.cmd.colorscheme 'tokyonight-night'
-      -- vim.cmd.colorscheme 'tokyonight-storm'
-      -- vim.cmd.colorscheme 'tokyonight-day'
-      vim.cmd.colorscheme 'tokyonight-moon'
-    end,
-  },
-  'sainnhe/everforest',
-
-  { -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    -- config = function ()
-    --   vim.cmd.colorscheme 'onedark'
-    -- end,
-  },
-
-  { -- Rose Pine Theme
-    'rose-pine/neovim', as = 'rose-pine',
-    -- config = function ()
-    --   vim.cmd.colorscheme 'rose-pine-moon'
-    -- end,
-  },
 
 
   { -- set lualine as statusline
@@ -100,10 +64,15 @@ return {
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
+    main = "ibl",
     opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
+      scope = { enable = true },
+      -- char = '┊',
+      -- show_trailing_blankline_indent = false,
     },
+    config = function()
+      require("ibl").setup()
+    end
   },
 
   -- "gc" to comment visual regions/lines
