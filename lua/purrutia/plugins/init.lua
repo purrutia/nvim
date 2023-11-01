@@ -60,20 +60,6 @@ return {
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-  -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' }},
-
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-  -- Only load if `make` is available. Make sure you have the system
-  -- requirements installed
-  {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    -- NOTE: If you are having trouble with this installation refer to the README for telescope-fzf-native for more instructions
-    build = 'make',
-    cond = function()
-      return vim.fn.executable 'make' == 1
-    end,
-  },
 
   {
     -- [[ Treesitter ]]
@@ -106,18 +92,6 @@ return {
     -- end
   },
 
-  -- [[ Distraction Free ]]
-  'junegunn/goyo.vim',
-
-  -- Lua
-  {
-    "folke/zen-mode.nvim",
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  },
 
   -- [[ Easy align ]]
   'junegunn/vim-easy-align',
