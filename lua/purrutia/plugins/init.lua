@@ -42,23 +42,6 @@ return {
     },
   },
 
-  { -- Add indentation lines even on blanklines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    main = "ibl",
-    opts = {
-      scope = { enable = true },
-      -- char = '┊',
-      -- show_trailing_blankline_indent = false,
-    },
-    config = function()
-      require("ibl").setup()
-    end
-  },
-
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
 
 
   {
@@ -91,10 +74,6 @@ return {
     --   }
     -- end
   },
-
-
-  -- [[ Easy align ]]
-  'junegunn/vim-easy-align',
 
 
 
