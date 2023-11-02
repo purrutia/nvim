@@ -1,3 +1,9 @@
 # nvim
 
-this repository contains my nvim configuration files
+This repository contains my nvim configuration files.
+
+Inspired by:
+- nvim kickstart
+- ThePrimeagen
+- TJDevries
+- Josean
