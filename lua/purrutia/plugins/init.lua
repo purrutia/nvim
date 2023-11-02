@@ -26,22 +26,6 @@ return {
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline' },
   },
 
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      -- See `:help gitsigns.txt`
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
-
-
-
   {
     -- [[ Treesitter ]]
     -- Highlight, edit, and navigate code
@@ -54,30 +38,9 @@ return {
     end,
   },
 
-  -- [[ Calendar ]]
-  'renerocksai/calendar-vim',
-
-  -- [[ Vimwiki ]]
-  {
-    'vimwiki/vimwiki',
-    -- config = function()
-    --   vim.g.vimwiki_global_ext = 0
-    --   vim.g.vimwiki_list = {
-    --     {
-    --       auto_export = 1,
-    --       path = '~/vimwiki/',
-    --       syntax = 'markdown',
-    --       ext = '.md',
-    --     }
-    --   }
-    -- end
-  },
 
 
 
-  -- NOTE: Next Step on your Neovim journey: Add/Configure additional plugins
 
-  -- NOTE: The import below automatically adds your own plugins, configurations, etc from 'lua/custom/plugins/*.lua'
-  -- For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+
 }
