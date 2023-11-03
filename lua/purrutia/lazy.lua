@@ -21,7 +21,10 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- You can also configure plugins after the setup call,
 -- as they will be available in your neovim runtime.
-require('lazy').setup({ { import ="purrutia.plugins" }, { import = "purrutia.plugins.lsp" } })
+require('lazy').setup({
+  { import ="purrutia.plugins" },
+  { import = "purrutia.plugins.lsp" },
+})
 
   -- NOTE: The import below automatically adds your own plugins, configurations, etc from 'lua/custom/plugins/*.lua'
   -- For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
