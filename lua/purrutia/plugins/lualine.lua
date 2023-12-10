@@ -5,9 +5,6 @@ return { -- set lualine as statusline
   opts = {
     options = {
       icons_enabled = false,
-      -- theme = 'onedark',
-      -- theme = 'rose-pine',
-      -- theme = 'tokyonight',
       theme = 'palenight',
       component_separators = '|',
       section_separators = '',
