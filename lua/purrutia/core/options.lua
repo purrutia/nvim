@@ -12,13 +12,13 @@ vim.wo.number = true
 vim.wo.numberwidth = 4
 vim.wo.relativenumber = true
 
--- Enable mouse mode
--- vim.o.mouse = 'a'
+-- Disable mouse mode
+vim.o.mouse = ""
 
 -- Sync clipboard between OS and Neovim
 -- Remove this option if you want your OS clipboard to remain independent.
 -- See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = "unnamedplus"
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -27,14 +27,14 @@ vim.o.breakindent = true
 vim.o.undofile = true
 -- Location of undofiles
 local homedir = os.getenv("HOME")
-vim.o.undodir = homedir .. '/.local/nvim/undodir'
+vim.o.undodir = homedir .. "/.local/nvim/undodir"
 
 -- Case insensitive searching unless /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- keep sign column by default
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
 -- Decrease update time
 vim.o.updatetime = 300
@@ -42,7 +42,7 @@ vim.o.timeout = true
 vim.o.timeoutlen = 400
 
 -- Set completopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = "menuone,noselect"
 
 -- NOTE: You should make sure your terminal support this
 vim.o.termguicolors = true
