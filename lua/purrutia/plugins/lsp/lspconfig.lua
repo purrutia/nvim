@@ -130,6 +130,7 @@ return {
 				Lua = {
 					diagnostics = {
 						globals = { "vim" },
+						missing_parameters = false,
 					},
 					workspace = {
 						library = {
