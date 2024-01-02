@@ -59,7 +59,7 @@ vim.o.softtabstop = 2
 -- smartindent
 vim.o.smartindent = true
 
-vim.o.conceallevel = 0
+vim.o.conceallevel = 1
 
 -- scrolloff
 vim.o.scrolloff = 8
