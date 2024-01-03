@@ -292,5 +292,7 @@ return {
 			-- -- case you can temporarily switch to the "yq" parser until the bug is fixed.
 			-- yaml_parser = "native",
 		})
+		-- Key Maps
+		vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<cr>", { desc = "Obsidian Today note" })
 	end,
 }
