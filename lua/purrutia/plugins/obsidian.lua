@@ -190,11 +190,11 @@ return {
 			--
 			-- -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
 			-- -- URL it will be ignored but you can customize this behavior here.
-			-- follow_url_func = function(url)
-			-- 	-- Open the URL in the default web browser.
-			-- 	vim.fn.jobstart({"open", url})  -- Mac OS
-			-- 	-- vim.fn.jobstart({"xdg-open", url})  -- linux
-			-- end,
+			follow_url_func = function(url)
+				-- Open the URL in the default web browser.
+				-- 	vim.fn.jobstart({"open", url})  -- Mac OS
+				vim.fn.jobstart({ "xdg-open", url }) -- linux
+			end,
 			--
 			-- -- Optional, set to true if you use the Obsidian Advanced URI plugin.
 			-- -- https://github.com/Vinzent03/obsidian-advanced-uri
@@ -294,5 +294,8 @@ return {
 		})
 		-- Key Maps
 		vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<cr>", { desc = "Obsidian Today note" })
+		vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "Obsidian New note" })
+		-- vim.keymap.set("v", "<leader>ol", "<cmd>ObsidianLinkNew<cr>", { desc = "Obsidian New Link and note" })
+		vim.keymap.set("n", "<leader>fo", "<cmd>ObsidianSearch<cr>", { desc = "Search in Obsidian Vault" })
 	end,
 }
