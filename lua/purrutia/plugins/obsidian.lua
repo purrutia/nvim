@@ -295,7 +295,8 @@ return {
 		-- Key Maps
 		vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<cr>", { desc = "Obsidian Today note" })
 		vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "Obsidian New note" })
-		-- vim.keymap.set("v", "<leader>ol", "<cmd>ObsidianLinkNew<cr>", { desc = "Obsidian New Link and note" })
+		vim.keymap.set("v", "<leader>ol", ":'<, '>ObsidianLinkNew<cr>", { desc = "Obsidian New Link and note" })
 		vim.keymap.set("n", "<leader>fo", "<cmd>ObsidianSearch<cr>", { desc = "Search in Obsidian Vault" })
+		-- 			return require("obsidian").util.toggle_checkbox()
 	end,
 }
