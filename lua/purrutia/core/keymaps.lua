@@ -96,6 +96,9 @@ vim.keymap.set("i", "<A-v>", "<C-v>", { silent = true })
 vim.keymap.set("v", "<", "<gv", { silent = true })
 vim.keymap.set("v", ">", ">gv", { silent = true })
 
+-- Macros
+vim.kemap.set("x", "Q", ":norm @q<CR>", { desc = "Apply q macro to every visual selected line" })
+
 -- Move text up and down
 vim.keymap.set("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", { silent = true })
 vim.keymap.set("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { silent = true })
