@@ -51,11 +51,11 @@ vim.o.termguicolors = true
 -- convert tabs to spaces
 vim.o.expandtab = true
 -- the number of spaces inserted for each indentation
-vim.o.shiftwidth = 2
--- insert 2 spaces for a tab
-vim.o.tabstop = 2
+vim.o.shiftwidth = 4
+-- insert 4 spaces for a tab
+vim.o.tabstop = 4
 -- number of spaces used when editing tabs
-vim.o.softtabstop = 2
+vim.o.softtabstop = 4
 -- smartindent
 vim.o.smartindent = true
 
