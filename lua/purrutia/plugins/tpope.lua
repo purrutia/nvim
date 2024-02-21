@@ -8,10 +8,4 @@ return {
 		end,
 	},
 	"tpope/vim-rhubarb",
-
-	-- Detect tabstop and shiftwidth automatically
-	"tpope/vim-sleuth",
-
-	-- Change Surroundings
-	-- 'tpope/vim-surround',
 }
