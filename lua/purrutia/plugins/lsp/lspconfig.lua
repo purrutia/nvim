@@ -55,16 +55,16 @@ return {
 			automatic_installation = true,
 		})
 
-		mason_tool_installer.setup({
-			ensure_installed = {
-				"prettier", -- prettier formatter
-				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint", -- python linter
-				"eslint_d", -- js linter
-			},
-		})
+		 mason_tool_installer.setup({
+		 	ensure_installed = {
+		 		"prettier", -- prettier formatter
+		 		"stylua", -- lua formatter
+		 		"isort", -- python formatter
+		 		"black", -- python formatter
+		 		"pylint", -- python linter
+		 		"eslint_d", -- js linter
+		 	},
+		 })
 
 		-- This function gets run when an LSP connects to a particular buffer.
 		local on_attach = function(_, bufnr)
