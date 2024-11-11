@@ -317,6 +317,7 @@ return {
 		vim.keymap.set("v", "<leader>ol", ":'<, '>ObsidianLinkNew<cr>", { desc = "Obsidian New Link and note" })
 		vim.keymap.set("n", "<leader>fo", "<cmd>ObsidianSearch<cr>", { desc = "Search in Obsidian Vault" })
 		vim.keymap.set("n", "<leader>oc", ":norm _i- [ ] <esc>", { desc = "Make a checkbox" })
-		-- 			return require("obsidian").util.toggle_checkbox()
+		vim.keymap.set("v", "<leader>cb", ":'<, '>ToggleCB<cr>", { desc = "Check box in visual mode" })
+		vim.keymap.set("n", "<leader>cb", ":ToggleCB<cr>", { desc = "Check box" })
 	end,
 }
