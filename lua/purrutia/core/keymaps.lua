@@ -46,11 +46,11 @@ vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { silent = true })
 vim.keymap.set("n", "Q", "<Nop>", { silent = true })
 
 -- Quicker buffer close
-vim.keymap.set("n", "<leader>q", "<cmd>bd<CR>", { silent = true })
+vim.keymap.set("n", "<leader>q", "<cmd>bd<CR>", { silent = true, desc = "Buffer delete" })
 
 -- Copy and paste to the clipboard. BEST MAPPINGS EVER!!!
-vim.keymap.set("n", "<leader>y", '"+y', { silent = true })
-vim.keymap.set("n", "<leader>p", '"+p', { silent = true })
+vim.keymap.set("n", "<leader>y", '"+y', { silent = true, desc = "Copy to clipboard" })
+vim.keymap.set("n", "<leader>p", '"+p', { silent = true, desc = "Paste from clipboard" })
 
 -- Yank to the end of the line
 vim.keymap.set("n", "Y", "y$", { silent = true })
@@ -59,10 +59,20 @@ vim.keymap.set("n", "Y", "y$", { silent = true })
 vim.keymap.set("n", "<A-m>", "gUiw", { silent = true })
 
 -- Change line to Titlecase
-vim.keymap.set("n", "<leader>tc", "<cmd>s/\\v<(.)(\\k*)/\\u\\1\\L\\2/g<CR>", { silent = true })
+vim.keymap.set(
+	"n",
+	"<leader>tc",
+	"<cmd>s/\\v<(.)(\\k*)/\\u\\1\\L\\2/g<CR>",
+	{ silent = true, desc = "Change line to Titlecase" }
+)
 
 -- Change CWR to root file directory
-vim.keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<CR><cmd>pwd<CR>", { silent = true })
+vim.keymap.set(
+	"n",
+	"<leader>cd",
+	"<cmd>lcd %:p:h<CR><cmd>pwd<CR>",
+	{ silent = true, desc = "Change CWR to root file directory" }
+)
 
 -- Recover Ctrl - v
 vim.keymap.set("n", "<A-v>", "<C-v>", { silent = true })
@@ -119,3 +129,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 -- [[ Diary Titles ]]
 vim.keymap.set("n", "<leader>tf", "<cmd>.!todayfig<CR>", { desc = "Today's Title" })
 vim.keymap.set("n", "<leader>yf", "<cmd>.!yesterdayfig<CR>", { desc = "Yesterday's Title" })
+
+-- Additional keymaps on branch keymap
+
+vim.keymap.set("n", "<leader>v", ":vsp<CR>", { desc = "Vertical Split" })
