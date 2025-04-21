@@ -21,7 +21,7 @@ return {
 			workspaces = {
 				{
 					name = "Second_Brain",
-					path = "~/obsidian_vaults/Second_Brain/",
+					path = "/mnt/c/Users/phng64/Documents/1_Projects/Obsidian_Vaults/Second_Brain",
 				},
 				-- {
 				--   name = "work",
